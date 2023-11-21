@@ -1,0 +1,29 @@
+.banner {
+    background-color: rgba(100, 100, 100, 0.3);
+    height: 100%;
+    padding: 60px;
+}
+
+.categoryTitle,
+.bannerTitle,
+.bannerDescription {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.bannerTitle {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 40px;
+}
+
+.bannerDescription {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+}
+
+.bannerButton {
+    padding: 3px 20px;
+    background-color: #fff;
+}
