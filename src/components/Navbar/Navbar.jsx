@@ -30,6 +30,7 @@ const Navbar = () => {
             <form onSubmit={submit}>
                 <input type="text" value={search} onChange={inputChange} />
             </form>
+            <Link to={'favorites'}>Favoritos</Link>
             <button onClick={cerrar}>cerrar sesion</button>
         </nav>
     )
