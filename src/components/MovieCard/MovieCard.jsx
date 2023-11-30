@@ -1,16 +1,38 @@
 import { Link } from "react-router-dom"
 import { MdFavoriteBorder } from "react-icons/md";
-import { useContext } from "react";
+import { MdFavorite } from "react-icons/md";
+import { useContext, useState, useEffect } from "react";
 import { FavoritesContext } from "../../context/FavoritesContext";
 import './MovieCard.css'
 
 const MovieCard = ({ movieCard }) => {
 
-    const { addFavorites } = useContext(FavoritesContext)
+    const { addFavorite, deleteFavorite, arrayfavorites } = useContext(FavoritesContext)
+    const [favorite, setFavorite] = useState(false)
 
-    const toggleFavorite = () => {
-        addFavorites(movieCard.id, movieCard.title, `https://image.tmdb.org/t/p/w94_and_h141_bestv2${movieCard.poster_path}`, 'movie')
+    const addF = () => {
+        addFavorite(movieCard.id, movieCard.title, `https://image.tmdb.org/t/p/w94_and_h141_bestv2${movieCard.poster_path}`, 'movie')
+        setFavorite(true)
     }
+
+    const deleteF = async (id) => {
+        await deleteFavorite(id)
+        setFavorite(false)
+    }
+
+    useEffect(() => {
+        const getArray = async () => {
+            try {
+                const favoritesData = await arrayfavorites()
+                const isFavorite = favoritesData.some(favorite => favorite.id === movieCard.id)
+                setFavorite(isFavorite)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getArray()
+    }, [arrayfavorites, movieCard.id])
+
 
     return (
         <div style={{ position: "relative" }}>
@@ -22,11 +44,21 @@ const MovieCard = ({ movieCard }) => {
                 />
             </Link>
             <p>{movieCard.title}</p>
-            <MdFavoriteBorder
-                onClick={toggleFavorite}
-                className="icon"
-                style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '30px' }}
-            />
+            {
+                favorite ? (
+                    <MdFavorite
+                        onClick={() => { deleteF(movieCard.id) }}
+                        className="icon"
+                        style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '30px', color: 'red' }}
+                    />
+                ) : (
+                    <MdFavoriteBorder
+                        onClick={addF}
+                        className="icon"
+                        style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '30px', color: 'red' }}
+                    />
+                )
+            }
         </div>
     )
 }
