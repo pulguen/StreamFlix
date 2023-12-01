@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -50,9 +51,12 @@ const Register = () => {
           />
         </div>
         <div className="mb-5 mt-4">
-          <button type="submit" className="btn btn-primary w-100">
-            Confirmar
-          </button>
+          <button type="submit" className="btn btn-primary w-100">Confirmar</button>
+        <div>
+          <Link to="/login">
+            <button className="btn btn-primary w-100 mt-2">Volver</button>
+          </Link>
+          </div>
         </div>
       </form>
     </div>

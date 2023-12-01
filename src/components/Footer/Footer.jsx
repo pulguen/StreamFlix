@@ -14,22 +14,10 @@ const Footer = () => {
             </p>
           </Col>
           <Col md="2" className="mb-4">
-            <h6 className="text-uppercase fw-bold">Horario</h6>
-            <p>
-              <a href="#!" className="text-reset">
-                Lunes y Miércoles
-              </a>
-            </p>
-            <p>
-              <a href="#!" className="text-reset">
-                10:30 a 12:00
-              </a>
-            </p>
-            <p>
-              <a href="#!" className="text-reset">
-                Comisión 23644
-              </a>
-            </p>
+            <h6 className="text-uppercase fw-bold">Comisión 23644</h6>
+            <p className="text-reset">Grupo 4</p>
+            <p className="text-reset">Lunes y Miércoles</p>
+            <p className="text-reset">10:30 a 12:00 Hs.</p>
           </Col>
           <Col md="3" className="mb-4">
             <h6 className="text-uppercase fw-bold">Enlaces Útiles</h6>
