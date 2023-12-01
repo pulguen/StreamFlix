@@ -25,7 +25,7 @@ const MyNavbar = () => {
     }
 
   return (
-    <Navbar bg="body-tertiary" expand="lg" style={{ marginLeft: '20px', marginRight: '20px' }}>
+    <Navbar bg="body-tertiary" expand="lg" style={{ paddingLeft: '20px', paddingRight: '20px' }}>
       <Navbar.Brand as={Link} to="/">StreamFlix</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarSupportedContent" />
       <Navbar.Collapse id="navbarSupportedContent">
