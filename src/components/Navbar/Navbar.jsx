@@ -43,7 +43,7 @@ const MyNavbar = () => {
         </Nav>
         <Form className="d-flex" role="search"  onSubmit={submit}>
           <FormControl type="search" placeholder="Buscar por nombre" className="me-2" aria-label="Buscar" onChange={inputChange}/>
-          <Button variant="outline-success" type="submit" >Search</Button>
+          <Button variant="outline-success" type="submit" >Buscar</Button>
         </Form>
       </Navbar.Collapse>
     </Navbar>
