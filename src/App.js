@@ -14,6 +14,8 @@ import Footer from './components/Footer/Footer';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import './index.css'
+
 
 function App() {
   const { userLogin, authChecked } = useContext(AuthContext);

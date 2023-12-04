@@ -3,11 +3,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <footer className="bg-light text-center text-lg-start text-muted">
-      <Container className="p-4">
-        <Row className="justify-content-md-center"> {/* Center the columns */}
+    <footer className="bg-light text-lg-start text-muted">
+      <Container className="pt-4">
+        <Row className="justify-content-between">
           <Col md="4" className="mb-4">
-            <h6 className="text-uppercase fw-bold">StreamFlix</h6>
+            <h6 className="text-uppercase fw-bold logo">StreamFlix</h6>
             <p>
               Tu destino definitivo para disfrutar de una amplia variedad de películas y series en línea.
               Explora un extenso catálogo que abarca desde los éxitos de taquilla más recientes hasta clásicos atemporales.
@@ -28,12 +28,12 @@ const Footer = () => {
             </p>
             <p>
               <a href="#!" className="text-reset">
-                Películas
+                link
               </a>
             </p>
             <p>
               <a href="#!" className="text-reset">
-                Series
+                Documentación
               </a>
             </p>
           </Col>

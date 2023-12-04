@@ -23,7 +23,20 @@
     font-size: 18px;
 }
 
-.bannerButton {
-    padding: 3px 20px;
-    background-color: #fff;
+Button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 220px;
+    height: auto;    
+}
+
+Button svg{
+    margin-left: 10px;
+}
+
+.boton-reproducir{
+    margin-left: 5px;
+    font-weight: 500;
+    font-size: 18pt;
 }

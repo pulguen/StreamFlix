@@ -26,7 +26,7 @@ const MyNavbar = () => {
 
   return (
     <Navbar bg="body-tertiary" expand="lg" style={{ paddingLeft: '20px', paddingRight: '20px' }}>
-      <Navbar.Brand as={Link} to="/">StreamFlix</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/" className='logo'>StreamFlix</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarSupportedContent" />
       <Navbar.Collapse id="navbarSupportedContent">
         <Nav className="me-auto">
