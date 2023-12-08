@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { MdFavoriteBorder } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
 import { useContext, useState, useEffect } from "react";
 import { FavoritesContext } from "../../context/FavoritesContext";
@@ -35,30 +34,20 @@ const MovieCard = ({ movieCard }) => {
 
 
     return (
-        <div style={{ position: "relative" }}>
+        <div>
             <Link to={`movie/${movieCard.id}`}>
                 <img
-                    style={{ width: "100%", height: "auto" }}
+                    style={{ position: "relative", width: "100%", borderRadius: "10px 70px 10px 10px" }}
                     src={`https://image.tmdb.org/t/p/w220_and_h330_face${movieCard.poster_path}`}
                     alt=""
                 />
             </Link>
             <p>{movieCard.title}</p>
-            {
-                favorite ? (
-                    <MdFavorite
-                        onClick={() => { deleteF(movieCard.id) }}
-                        className="icon"
-                        style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '30px', color: 'red' }}
-                    />
-                ) : (
-                    <MdFavoriteBorder
-                        onClick={addF}
-                        className="icon"
-                        style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '30px', color: 'red' }}
-                    />
-                )
-            }
+            <MdFavorite
+                className="icon"
+                onClick={favorite ? () => deleteF(movieCard.id) : addF}
+                style={{ color: favorite ? "#ff0101" : "#a8a8a8" }}
+            />
         </div>
     )
 }

@@ -85,9 +85,7 @@ const MovieDetails = () => {
                 <Card className="mt-3">
                   <Card.Body>
                     <Card.Title>Recomendaciones</Card.Title>
-                    <Card.Text>
                       <Recommendations recommendationsId={movie.id} />
-                    </Card.Text>
                   </Card.Body>
                 </Card>
               </Col>

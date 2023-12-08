@@ -1,3 +1,7 @@
-.icon{
+.icon {
     cursor: pointer;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    font-size: 25px;
 }
