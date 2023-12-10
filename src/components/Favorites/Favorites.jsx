@@ -1,6 +1,7 @@
 import { useEffect, useContext, useState } from "react"
 import { FavoritesContext } from "../../context/FavoritesContext";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Loading from "../Loading/Loading";
 
 const Favorites = () => {
   const { getFavorites, deleteFavorite } = useContext(FavoritesContext);
@@ -36,7 +37,7 @@ const Favorites = () => {
     <PrivateRoute>
       <div>
         {loading ? (
-          <p>Cargando...</p>
+          <Loading/>
         ) : (
           <div>
             {favorites.map(favorite => (

@@ -6,6 +6,7 @@ import Cast from '../Cast/Cast';
 import Recommendations from '../Recommendations/Recommendations';
 import options from '../../config/apiOptions';
 import './movieDetails.css';
+import Loading from '../Loading/Loading';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
@@ -30,7 +31,7 @@ const MovieDetails = () => {
   return (
     <PrivateRoute>
       {cargando ? (
-        <h1>cargando...</h1>
+        <Loading/>
       ) : (
         <>
           <div
