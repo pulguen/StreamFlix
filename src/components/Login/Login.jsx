@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
@@ -12,8 +13,18 @@ const Login = () => {
 
   const loguearse = async (e) => {
     e.preventDefault();
-    await loginEmail(email, pass);
-    navigate('/');
+    
+    try {
+      await loginEmail(email, pass);
+      navigate('/');
+    } catch (error) {
+      // Muestra un mensaje de error con SweetAlert2
+      Swal.fire({
+        icon: 'error',
+        title: 'Error de inicio de sesión',
+        text: 'Las credenciales son incorrectas',
+      });
+    }
   };
 
   return userLogin ? (
@@ -57,6 +68,7 @@ const Login = () => {
 };
 
 export default Login;
+
 
 
 
