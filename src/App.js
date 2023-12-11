@@ -15,6 +15,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './index.css'
+import EditProfile from './components/Edit-Profile/EditProfile';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route exact path='/register' element={<Register />} />
             <Route exact path='/favorites' element={<Favorites />} />
             <Route exact path='/movie/:id' element={<MovieDetails />} />
+            <Route exact path='/edit-profile' element={<EditProfile />} />
             <Route exact path='/search/:search' element={<SearchResults />} />
           </Routes>
           <Footer />

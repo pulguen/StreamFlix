@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import Swal from 'sweetalert2';
 import { AuthContext } from '../../context/AuthContext';
+import Swal from 'sweetalert2';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MyNavbar = () => {
-  const { logOut } = useContext(AuthContext);
+  const { logOut, userLogin } = useContext(AuthContext);
   const history = useNavigate();
   const [search, setSearch] = useState('');
 
@@ -59,8 +59,8 @@ const MyNavbar = () => {
           <Nav.Link as={Link} to="/link">
             Series
           </Nav.Link>
-          <NavDropdown title="Perfil" id="basic-nav-dropdown">
-            <NavDropdown.Item as={Link} to="/action">
+          <NavDropdown title={`${userLogin?.displayName || ''} ,Bienvenido`} id="basic-nav-dropdown">
+            <NavDropdown.Item as={Link} to="/edit-profile">
               Editar Perfil
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/favorites">
@@ -72,7 +72,7 @@ const MyNavbar = () => {
             </NavDropdown.Item>
           </NavDropdown>
           <Nav.Link as={Link} to="#" disabled>
-            Novedades
+            {/* Puedes agregar algún contenido específico aquí */}
           </Nav.Link>
         </Nav>
         <Form className="d-flex" role="search" onSubmit={submit}>
