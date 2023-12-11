@@ -63,7 +63,7 @@ const MyNavbar = () => {
             <NavDropdown.Item as={Link} to="/action">
               Editar Perfil
             </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/another-action">
+            <NavDropdown.Item as={Link} to="/favorites">
               Mi Lista
             </NavDropdown.Item>
             <NavDropdown.Divider />
