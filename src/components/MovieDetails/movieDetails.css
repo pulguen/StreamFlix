@@ -21,5 +21,18 @@
     font-size: 25px;
   }
   
+
+  .star-rating {
+    font-size: 24px;
+  }
+  
+  .star {
+    color: gold;
+    margin-right: 2px;
+  }
+
+  .año-duracion{
+    display: flex;
+  }
   
 

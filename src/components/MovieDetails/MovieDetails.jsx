@@ -11,6 +11,31 @@ import Loading from '../Loading/Loading';
 import Swal from 'sweetalert2';
 import { MdFavorite } from 'react-icons/md';
 
+const StarRating = ({ rating }) => {
+  const fullStars = Math.floor(rating);
+  const halfStar = rating - fullStars >= 0.5;
+
+  const renderStars = () => {
+    const stars = [];
+
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<span key={i} className="star">&#9733;</span>);
+    }
+
+    if (halfStar) {
+      stars.push(<span key="half" className="star">&#9734;</span>);
+    }
+
+    return stars;
+  };
+
+  return (
+    <div className="star-rating">
+      {renderStars()}
+    </div>
+  );
+};
+
 const MovieDetails = () => {
   const { addFavorite, deleteFavorite, arrayfavorites } = useContext(FavoritesContext);
   const [favorite, setFavorite] = useState(false);
@@ -130,7 +155,6 @@ const MovieDetails = () => {
                       />
                     </div>
                   </div>
-                  
                 </Col>
                 <Col md={6} className="text-md-end mt-2 mb-2">
                   <img src={`https://image.tmdb.org/t/p/w220_and_h330_face${movie.poster_path}`} alt={movie.title} />
@@ -143,16 +167,16 @@ const MovieDetails = () => {
             <Row>
               <Col md={6}>
                 <div className='año-duracion'>
-                  <p>{obtenerAñoEstreno()}</p>
-                  <p>{movie.runtime} minutos</p>
+                  <p className='mr-2'> <strong>Estreno:</strong> {obtenerAñoEstreno()}   <strong> Duración:</strong></p>
+                  <p>  {movie.runtime} minutos</p>
                 </div>
                 <div>
                   <p>{movie.adult ? 'Para adultos' : 'Para todo público'}</p>
                 </div>
-                <p>Puntuación de usuario: {movie.vote_average}/10</p>
+                <p>Puntuación de usuario: <StarRating rating={movie.vote_average / 2} /></p>
                 <p>cantidad de votos: {movie.vote_count}</p>
                 <p>{movie.overview}</p>
-                <p>Género: {movie.genres.map(genero => genero.name).join(', ')}</p>
+                <p><strong>Género:</strong> {movie.genres.map(genero => genero.name).join(', ')}</p>
               </Col>
               <Col md={6}>
                 <Card>
