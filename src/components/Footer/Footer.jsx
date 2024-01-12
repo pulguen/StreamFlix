@@ -22,17 +22,17 @@ const Footer = () => {
           <Col md="3" className="mb-4">
             <h6 className="text-uppercase fw-bold">Enlaces Útiles</h6>
             <p>
-              <a href="#!" className="text-reset">
+              <a href="/" className="text-reset">
                 Home
               </a>
             </p>
             <p>
-              <a href="#!" className="text-reset">
-                link
+              <a href="/edit-profile" className="text-reset">
+                Perfil
               </a>
             </p>
             <p>
-              <a href="#!" className="text-reset">
+              <a href="https://drive.google.com/file/d/1gJ0C2ektpf8w9xcUo6gm1sOqm99ergdr/view?usp=sharing" className="text-reset">
                 Documentación
               </a>
             </p>
